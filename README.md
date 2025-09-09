@@ -10,6 +10,8 @@ Análise e teste de mesa para 10 cenários diferentes, aplicando uma fórmula co
 ### 2. Música: Modelagem de Classes
 Modelagem de três classes, cada uma com três atributos e um método, inspiradas em uma música de minha escolha. Cada classe é representada por um objeto que aparece na letra da música. Inclui os diagramas UML e a implementação em Java.
 
+Link da música: [https://www.youtube.com/watch?v=TeCIZLXwkI8&list=RDTeCIZLXwkI8&start_radio=1]
+
 <img width="1593" height="586" alt="Class Music  Roman Impire Anthem" src="https://github.com/user-attachments/assets/c3da46af-72fc-4219-877a-c5dfc0092cf2" />
 
 
@@ -35,7 +37,7 @@ Modelagem de três classes, cada uma com três atributos e três métodos, basea
 ### 5. Vídeo: Modelagem de Classes
 Modelagem de três classes, cada uma com três atributos e três métodos, inspiradas em um vídeo. Cada classe é representada por um objeto que aparece no vídeo. Inclui os diagramas UML e a implementação em Java.
 
-https://www.youtube.com/watch?v=XB-Vsp7gvYI  
+Link do Vídeo: [https://www.youtube.com/watch?v=XB-Vsp7gvYI]  
 
 <img width="1593" height="716" alt="Diagrama de Classe Video - Desafio sob Fogo" src="https://github.com/user-attachments/assets/50004439-3e01-4685-873e-6134b91955b3" />
 
