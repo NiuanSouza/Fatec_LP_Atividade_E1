@@ -1,4 +1,5 @@
 package com.example.tgcontrol.scenes;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -68,4 +69,7 @@ public class navbar implements Initializable {
     public void romeAnthen(javafx.event.ActionEvent actionEvent) {
         carregarPagina("romeAnthen.fxml");
     }
+
+    @FXML
+    public void vikMuniz(ActionEvent actionEvent) { carregarPagina("vikMuniz.fxml");}
 }

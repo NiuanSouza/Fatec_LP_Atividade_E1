@@ -27,6 +27,14 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
+            <Button layoutX="157.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#vikMuniz" prefHeight="26.0" prefWidth="171.0" style="-fx-border-radius: 25px; -fx-background-color: #FFFFFF;" text="Vik Muniz" textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </top>
