@@ -6,12 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         Fighter fighter1 = new Fighter();
-        fighter1.gender = "Masculino";
         fighter1.age = 28;
         fighter1.weight = 85.5;
 
         Fighter fighter2 = new Fighter();
-        fighter2.gender = "Masculino";
         fighter2.age = 31;
         fighter2.weight = 72.0;
 
