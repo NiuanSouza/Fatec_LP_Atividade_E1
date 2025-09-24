@@ -26,11 +26,6 @@
                             </Label>
                             <Label layoutX="151.0" layoutY="215.0" prefHeight="26.0" prefWidth="66.0" text="Quadro:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                             <Label layoutX="338.0" layoutY="293.0" prefHeight="26.0" prefWidth="66.0" text="Artista" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                            <Button id="btn_calcular" fx:id="btn_liftSouls" layoutX="708.0" layoutY="143.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Material" textAlignment="CENTER">
-                                <font>
-                                    <Font name="Lato Bold" size="13.0" />
-                                </font>
-                            </Button>
                         <Label layoutX="248.0" layoutY="189.0" prefHeight="26.0" prefWidth="49.0" text="Fundo" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                         <TextField layoutX="398.0" layoutY="215.0" prefHeight="26.0" prefWidth="111.0" />
                         <TextField layoutX="591.0" layoutY="215.0" prefHeight="26.0" prefWidth="111.0" />
@@ -44,17 +39,12 @@
                         <Label layoutX="245.0" layoutY="91.0" prefHeight="26.0" prefWidth="55.0" text="Nome" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                         <Label layoutX="416.0" layoutY="91.0" prefHeight="26.0" prefWidth="75.0" text="Quantidade" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                         <Label layoutX="607.0" layoutY="91.0" prefHeight="26.0" prefWidth="80.0" text="Consistencia" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Button id="btn_SingPraise" fx:id="btn_singPraise" layoutX="708.0" layoutY="242.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Quadro" textAlignment="CENTER">
+                        <Button id="btn_calcular" fx:id="btn_declareLineage" layoutX="405.0" layoutY="353.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Fazer Monalisa" textAlignment="CENTER">
                            <font>
                               <Font name="Lato Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button id="btn_calcular" fx:id="btn_declareLineage" layoutX="401.0" layoutY="352.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Fazer Monalisa" textAlignment="CENTER">
-                           <font>
-                              <Font name="Lato Bold" size="13.0" />
-                           </font>
-                        </Button>
-                        <Label fx:id="lbl_declareLineage" layoutX="262.0" layoutY="365.0" prefHeight="18.0" prefWidth="403.0" />
+                        <Label fx:id="lbl_declareLineage" layoutX="262.0" layoutY="404.0" prefHeight="18.0" prefWidth="403.0" />
                         <Label fx:id="lbl_singPraise" layoutX="262.0" layoutY="261.0" prefHeight="18.0" prefWidth="403.0" />
                         <Label fx:id="lbl_liftSouls" layoutX="263.0" layoutY="156.0" prefHeight="18.0" prefWidth="393.0" />
                         </children>
