@@ -5,7 +5,9 @@ public class Fighter {
     public int age;
     public double weight;
 
-    public void apresetention() {
-        System.out.println("Lutador: Nome " + this.fighterName + ", Idade: " + this.age + " anos, Peso: " + this.weight + "kg.");
+    public String apresetention()
+    {
+        String apresentation =  ("Lutador: Nome " + this.fighterName + ", Idade: " + this.age + " anos, Peso: " + this.weight + "kg.");
+        return apresentation;
     }
 }

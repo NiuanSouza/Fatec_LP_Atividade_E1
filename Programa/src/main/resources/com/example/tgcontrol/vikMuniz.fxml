@@ -56,46 +56,46 @@
                <content>
                   <AnchorPane prefHeight="514.0" prefWidth="1097.0">
                      <children>
-                        <TextField fx:id="txt_fighterName1" layoutX="321.0" layoutY="215.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextField fx:id="txt_fighterName1" layoutX="358.0" layoutY="215.0" prefHeight="26.0" prefWidth="88.0" />
                         <Label layoutX="402.0" layoutY="14.0" prefHeight="76.0" prefWidth="104.0" text="Track Brawl" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="333.0" layoutY="177.0" prefHeight="26.0" prefWidth="66.0" text="Lutador 1:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Button id="btn_calcular" fx:id="btn_local" layoutX="599.0" layoutY="115.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Local" textAlignment="CENTER">
+                        <Label layoutX="376.0" layoutY="177.0" prefHeight="26.0" prefWidth="66.0" text="Lutador 1:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Button id="btn_calcular" layoutX="627.0" layoutY="115.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_local" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Local" textAlignment="CENTER">
                            <font>
                               <Font name="Lato Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Label layoutX="254.0" layoutY="215.0" prefHeight="26.0" prefWidth="49.0" text="Name:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Label layoutX="264.0" layoutY="116.0" prefHeight="26.0" prefWidth="66.0" text="Local:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <TextField fx:id="txt_latitude" layoutX="328.0" layoutY="116.0" prefHeight="26.0" prefWidth="74.0" />
-                        <TextField fx:id="txt_longitude" layoutX="416.0" layoutY="116.0" prefHeight="26.0" prefWidth="74.0" />
-                        <TextField fx:id="txt_altitude" layoutX="506.0" layoutY="116.0" prefHeight="26.0" prefWidth="73.0" />
-                        <Label layoutX="338.0" layoutY="91.0" prefHeight="26.0" prefWidth="55.0" text="Latitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Label layoutX="424.0" layoutY="91.0" prefHeight="26.0" prefWidth="59.0" text="Longitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Label layoutX="520.0" layoutY="91.0" prefHeight="26.0" prefWidth="46.0" text="Altitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Button id="btn_SingPraise" fx:id="btn_fighter" layoutX="543.0" layoutY="256.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="29.0" prefWidth="129.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Lutadores" textAlignment="CENTER">
+                        <Label layoutX="307.0" layoutY="215.0" prefHeight="26.0" prefWidth="49.0" text="Name:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Label layoutX="306.0" layoutY="118.0" prefHeight="26.0" prefWidth="52.0" text="Local:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <TextField fx:id="txt_latitude" layoutX="356.0" layoutY="116.0" prefHeight="26.0" prefWidth="74.0" />
+                        <TextField fx:id="txt_longitude" layoutX="446.0" layoutY="116.0" prefHeight="26.0" prefWidth="74.0" />
+                        <TextField fx:id="txt_altitude" layoutX="528.0" layoutY="117.0" prefHeight="26.0" prefWidth="73.0" />
+                        <Label layoutX="366.0" layoutY="91.0" prefHeight="26.0" prefWidth="55.0" text="Latitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Label layoutX="458.0" layoutY="91.0" prefHeight="26.0" prefWidth="59.0" text="Longitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Label layoutX="542.0" layoutY="91.0" prefHeight="26.0" prefWidth="46.0" text="Altitude" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Button id="btn_SingPraise" layoutX="579.0" layoutY="256.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_fighter" prefHeight="29.0" prefWidth="129.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Definir Lutadores" textAlignment="CENTER">
                            <font>
                               <Font name="Lato Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button id="btn_calcular" fx:id="btn_fight" layoutX="461.0" layoutY="352.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Iniciar Luta" textAlignment="CENTER">
+                        <Button id="btn_calcular" layoutX="461.0" layoutY="352.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_fight" prefHeight="26.0" prefWidth="118.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Iniciar Luta" textAlignment="CENTER">
                            <font>
                               <Font name="Lato Bold" size="13.0" />
                            </font>
                         </Button>
                         <Label fx:id="lbl_local" layoutX="262.0" layoutY="159.0" prefHeight="18.0" prefWidth="403.0" />
-                        <Label layoutX="254.0" layoutY="257.0" prefHeight="26.0" prefWidth="49.0" text="Idade:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Label layoutX="254.0" layoutY="294.0" prefHeight="26.0" prefWidth="49.0" text="Peso:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <Label layoutX="431.0" layoutY="177.0" prefHeight="26.0" prefWidth="66.0" text="Lutador 2:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-                        <TextField fx:id="txt_fighterName2" layoutX="420.0" layoutY="215.0" prefHeight="26.0" prefWidth="88.0" />
-                        <TextField fx:id="txt_fighterAge1" layoutX="321.0" layoutY="257.0" prefHeight="26.0" prefWidth="88.0" />
-                        <TextField fx:id="txt_fighterAge2" layoutX="420.0" layoutY="257.0" prefHeight="26.0" prefWidth="88.0" />
-                        <TextField fx:id="txt_fighterWeight1" layoutX="321.0" layoutY="294.0" prefHeight="26.0" prefWidth="88.0" />
-                        <TextField fx:id="txt_fighterWeight2" layoutX="420.0" layoutY="294.0" prefHeight="26.0" prefWidth="88.0" />
-                        <TextArea fx:id="txt_view" editable="false" layoutX="749.0" layoutY="103.0" prefHeight="317.0" prefWidth="270.0" />
+                        <Label layoutX="307.0" layoutY="256.0" prefHeight="26.0" prefWidth="49.0" text="Idade:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Label layoutX="308.0" layoutY="294.0" prefHeight="26.0" prefWidth="49.0" text="Peso:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <Label layoutX="487.0" layoutY="177.0" prefHeight="26.0" prefWidth="66.0" text="Lutador 2:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                        <TextField fx:id="txt_fighterName2" layoutX="476.0" layoutY="215.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextField fx:id="txt_fighterAge1" layoutX="358.0" layoutY="257.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextField fx:id="txt_fighterAge2" layoutX="476.0" layoutY="257.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextField fx:id="txt_fighterWeight1" layoutX="358.0" layoutY="294.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextField fx:id="txt_fighterWeight2" layoutX="476.0" layoutY="294.0" prefHeight="26.0" prefWidth="88.0" />
+                        <TextArea fx:id="txt_view" editable="false" layoutX="27.0" layoutY="76.0" prefHeight="317.0" prefWidth="267.0" />
                      </children>
                   </AnchorPane>
                </content>
