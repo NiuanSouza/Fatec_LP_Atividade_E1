@@ -1,14 +1,21 @@
 package com.example.tgcontrol.vikMuniz.trackBrawl;
 
 public class Local {
-    public int latitude;
-    public int longitude;
-    public int altitude;
+    private int latitude;
+    private int longitude;
+    private int altitude;
 
-    public String calculateLocal(int x, int y, int z) {
-        this.latitude = x;
-        this.longitude = y;
-        this.altitude = z;
+    public Local(int latitude, int longitude, int altitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
+    }
+
+    public String getInfo() {
         return "Local definido nas coordenadas -> Lat: " + this.latitude + ", Long: " + this.longitude + ", Alt: " + this.altitude + "m";
     }
+
+    public int getLatitude() { return latitude; }
+    public int getLongitude() { return longitude; }
+    public int getAltitude() { return altitude; }
 }

@@ -1,14 +1,21 @@
 package com.example.tgcontrol.vikMuniz.monaLisa;
 
 public class Material {
-    public String name;
-    public int amount;
-    public String consistency;
+    private String name;
+    private int amount;
+    private String consistency;
 
-    public String getMaterial(String name, int amount, String consistency) {
+    public Material(String name, int amount, String consistency) {
         this.name = name;
         this.amount = amount;
         this.consistency = consistency;
+    }
+
+    public String getInfo() {
         return "Material: " + this.name + ", Quantidade: " + this.amount + "g, Consistência: " + this.consistency;
     }
+
+    public String getName() { return name; }
+    public int getAmount() { return amount; }
+    public String getConsistency() { return consistency; }
 }

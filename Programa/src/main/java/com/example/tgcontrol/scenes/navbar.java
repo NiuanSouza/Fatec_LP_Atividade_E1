@@ -72,4 +72,10 @@ public class navbar implements Initializable {
 
     @FXML
     public void vikMuniz(ActionEvent actionEvent) { carregarPagina("vikMuniz.fxml");}
+
+    @FXML
+    public void dodlle(ActionEvent actionEvent) {carregarPagina("doddle.fxml");}
+
+    @FXML
+    public void desafioSobFogo(ActionEvent actionEvent) {carregarPagina("desafioSobFogo.fxml");}
 }

@@ -1,18 +1,29 @@
 package com.example.tgcontrol.vikMuniz.monaLisa;
 
 public class MonaLisa {
-    public String material;
-    public String canva;
-    public String artist;
+    private Material usedMaterial;
+    private Canva surface;
+    private String artist;
+    private boolean created = false;
 
-    public boolean makeMonaLisa(String material, String canva, String artist) {
-        this.material = material;
-        this.canva = canva;
+    public MonaLisa(String artist) {
         this.artist = artist;
-        System.out.println(this.artist + " está criando a Mona Lisa.");
-        System.out.println("Usando " + this.material);
-        System.out.println("Sobre " + this.canva);
-        System.out.println("Criação concluída!");
-        return true;
+    }
+
+    public boolean makeMonaLisa(Material material, Canva canva) {
+        if (material != null && canva != null) {
+            this.usedMaterial = material;
+            this.surface = canva;
+            this.created = true;
+            return true;
+        }
+        return false;
+    }
+
+    public String getCreationStatus() {
+        if (created) {
+            return "A arte foi criada com sucesso pelo artista " + this.artist + "!";
+        }
+        return "A obra ainda não foi criada. Verifique o material e o quadro.";
     }
 }

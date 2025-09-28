@@ -3,15 +3,31 @@ package com.example.tgcontrol.vikMuniz.trackBrawl;
 import java.util.Date;
 
 public class Fight {
-    public String participants;
-    public String local;
-    public Date time;
+    private Fighter fighter1;
+    private Fighter fighter2;
+    private Local local;
+    private Date time;
+
+    public Fight(Fighter f1, Fighter f2, Local local) {
+        this.fighter1 = f1;
+        this.fighter2 = f2;
+        this.local = local;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
 
     public boolean fightBegin() {
-        System.out.println("A luta vai começar!");
-        System.out.println("Participantes: " + this.participants);
-        System.out.println("Local do confronto: " + this.local);
-        System.out.println("Horário: " + this.time);
-        return true;
+        return fighter1 != null && fighter2 != null && local != null;
+    }
+
+    public String getDetails() {
+        String details = "\n--- Detalhes do Evento ---";
+        details += "\nParticipantes: " + fighter1.getFighterName() + " vs. " + fighter2.getFighterName();
+        details += "\nLocal do confronto: " + local.getInfo();
+        details += "\nHorário: " + (time != null ? time.toString() : "Não definido");
+        details += "\nA luta começou? " + (fightBegin() ? "SIM" : "NÃO");
+        return details;
     }
 }
