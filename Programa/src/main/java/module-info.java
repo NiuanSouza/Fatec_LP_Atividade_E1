@@ -12,6 +12,7 @@ module com.example.tgcontrol {
     requires javafx.graphics;
     requires java.logging;
     requires java.desktop;
+    requires org.apache.commons.csv;
 
     opens com.example.tgcontrol to javafx.fxml;
     opens com.example.tgcontrol.scenes to javafx.fxml;

@@ -3,13 +3,19 @@ package com.example.tgcontrol.scenes;
 import com.example.tgcontrol.MusicClass.Honour;
 import com.example.tgcontrol.MusicClass.Power;
 import com.example.tgcontrol.MusicClass.Valour;
+import com.example.tgcontrol.EscreveCSV; // Importa a classe de log
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class romeAnthen {
+
+    private long eventCounter = 0;
 
     @FXML
     public TextField txt_emotion;
@@ -43,6 +49,27 @@ public class romeAnthen {
     @FXML
     public Label lbl_declareLineage;
 
+
+    private void logEvent(String eventType, String entityName, String entityValue) {
+        eventCounter++;
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+
+        String csvData = String.format("%d,%s,%s,%s,%s",
+                eventCounter,
+                entityName,
+                entityValue,
+                timestamp,
+                eventType
+        );
+
+        try {
+            EscreveCSV.escreverLinha(csvData);
+        } catch (IOException e) {
+            System.err.println("ERRO CSV: Não foi possível salvar o log. " + e.getMessage());
+        }
+    }
+
+
     @FXML
     public void lift(ActionEvent actionEvent)
     {
@@ -56,6 +83,7 @@ public class romeAnthen {
 
         lbl_liftSouls.setText(resultsouls);
 
+        logEvent("Lift Souls (Valour)", emotion, destination + " via " + action);
     }
 
     @FXML
@@ -70,6 +98,8 @@ public class romeAnthen {
         String resultPraise = honour.singPraise();
 
         lbl_singPraise.setText(resultPraise);
+
+        logEvent("Sing Praise (Honour)", virtude, expressao + " | " + mensagem);
     }
 
     @FXML
@@ -84,8 +114,7 @@ public class romeAnthen {
         String resultLineage = power.declareLineage();
 
         lbl_declareLineage.setText(resultLineage);
+
+        logEvent("Declare Lineage (Power)", identity, strength + " | " + symbol);
     }
-
-
-
 }

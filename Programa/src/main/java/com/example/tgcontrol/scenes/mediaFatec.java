@@ -2,11 +2,18 @@ package com.example.tgcontrol.scenes;
 import javafx.scene.control.Label;
 
 import com.example.tgcontrol.Media.MediaFatec;
+import com.example.tgcontrol.EscreveCSV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class mediaFatec {
+
+    private long eventCounter = 0;
 
     @FXML
     private TextField txt_p1;
@@ -23,6 +30,25 @@ public class mediaFatec {
     @FXML
     private Label resposta;
 
+    private void logEvent(String eventType, String entityName, String entityValue) {
+        eventCounter++;
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+
+        String csvData = String.format("%d,%s,%s,%s,%s",
+                eventCounter,
+                entityName,
+                entityValue,
+                timestamp,
+                eventType
+        );
+
+        try {
+            EscreveCSV.escreverLinha(csvData);
+        } catch (IOException e) {
+            System.err.println("ERRO CSV: Não foi possível salvar o log. " + e.getMessage());
+        }
+    }
+
     @FXML
     public void calcularMedia(ActionEvent actionEvent)
     {
@@ -38,5 +64,19 @@ public class mediaFatec {
         double mediaFinal = aluno.calMedia();
 
         resposta.setText(String.format("Resposta: %.2f", mediaFinal));
+
+        try {
+            logEvent("Entrada P1", "Nota P1", String.valueOf(p1));
+            logEvent("Entrada E1", "Nota E1", String.valueOf(e1));
+            logEvent("Entrada E2", "Nota E2", String.valueOf(e2));
+            logEvent("Entrada X", "Nota X", String.valueOf(x));
+            logEvent("Entrada SUB", "Nota SUB", String.valueOf(sub));
+            logEvent("Entrada API", "Nota API", String.valueOf(api));
+
+            logEvent("Calculo Final", "Media Final", String.format("%.2f", mediaFinal));
+
+        } catch (Exception e) {
+            System.err.println("Erro durante o log de dados: " + e.getMessage());
+        }
     }
 }

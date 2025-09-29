@@ -6,15 +6,21 @@ import com.example.tgcontrol.vikMuniz.monaLisa.MonaLisa;
 import com.example.tgcontrol.vikMuniz.trackBrawl.Fight;
 import com.example.tgcontrol.vikMuniz.trackBrawl.Fighter;
 import com.example.tgcontrol.vikMuniz.trackBrawl.Local;
+import com.example.tgcontrol.EscreveCSV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class vikMuniz {
+
+    private long eventCounter = 0;
 
     // --- Instâncias de Estado ---
     private Local currentLocal;
@@ -51,6 +57,26 @@ public class vikMuniz {
     @FXML public Label lbl_local;
     @FXML public TextArea txt_view;
 
+    private void logEvent(String eventType, String entityName, String entityValue) {
+        eventCounter++;
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+
+        // Mapeando dados para a estrutura CSV (id, name, salary, start_date, dept)
+        String csvData = String.format("%d,%s,%s,%s,%s",
+                eventCounter,           // id: Contador sequencial
+                entityName,             // name: Nome da Entidade (ex: "MonaLisa", "Lutador 1")
+                entityValue,            // salary: Valor principal (ex: Altura do canvas, Peso do lutador)
+                timestamp,              // start_date: Timestamp da consulta
+                eventType               // dept: Tipo de evento (Categoria: Monalisa, Luta, Local)
+        );
+
+        try {
+            EscreveCSV.escreverLinha(csvData);
+        } catch (IOException e) {
+            System.err.println("ERRO CSV: Não foi possível salvar o log. " + e.getMessage());
+        }
+    }
+
     @FXML
     public void btn_Monalisa(ActionEvent actionEvent) {
         try {
@@ -73,13 +99,19 @@ public class vikMuniz {
 
             if(isArtCreated) {
                 lbl_monaLisa.setText(vikMunizArt.getCreationStatus());
+                // LOG: Criação bem-sucedida da Mona Lisa
+                String details = String.format("Material: %s (x%d), Canvas: %.1fx%.1f",
+                        materialName, materialAmount, canvaWidth, canvaHeight);
+                logEvent("MonaLisa (Sucesso)", artist, details);
             } else {
                 lbl_monaLisa.setText("ERRO ao criar a arte. Verifique os dados.");
+                logEvent("MonaLisa (Erro)", artist, "Criação falhou na lógica interna.");
             }
 
 
         } catch (NumberFormatException e) {
             lbl_monaLisa.setText("ERRO: Quantidade, Altura e Largura devem ser números válidos!");
+            logEvent("MonaLisa (Erro)", "Dados de Entrada", "Numérico Inválido");
         }
     }
 
@@ -97,8 +129,13 @@ public class vikMuniz {
             txt_view.appendText("\n--- Local Definido ---");
             txt_view.appendText("\n" + currentLocal.getInfo());
 
+            // LOG: Definição do Local
+            String coords = String.format("Lat: %d, Lon: %d", latitude, longitude);
+            logEvent("Track Brawl - Local", "Coordenadas", coords);
+
         } catch (NumberFormatException e) {
             lbl_local.setText("ERRO: Latitude, Longitude e Altitude devem ser números inteiros válidos.");
+            logEvent("Track Brawl - Local (Erro)", "Coordenadas", "Numérico Inválido");
         }
     }
 
@@ -109,20 +146,27 @@ public class vikMuniz {
             int age1 = Integer.parseInt(txt_fighterAge1.getText());
             double weight1 = Double.parseDouble(txt_fighterWeight1.getText());
 
-            fighterOne = new Fighter(name1, age1, weight1);
+            Fighter tempFighterOne = new Fighter(name1, age1, weight1);
 
             String name2 = txt_fighterName2.getText();
             int age2 = Integer.parseInt(txt_fighterAge2.getText());
             double weight2 = Double.parseDouble(txt_fighterWeight2.getText());
 
-            fighterTwo = new Fighter(name2, age2, weight2);
+            Fighter tempFighterTwo = new Fighter(name2, age2, weight2);
+
+            fighterOne = tempFighterOne;
+            fighterTwo = tempFighterTwo;
 
             txt_view.appendText("\n--- Lutadores Definidos ---");
             txt_view.appendText("\n" + fighterOne.apresetention());
             txt_view.appendText("\n" + fighterTwo.apresetention());
 
+            String details = String.format("%s (%d kg) vs %s (%d kg)", name1, (int)weight1, name2, (int)weight2);
+            logEvent("Track Brawl - Lutadores", "Definidos", details);
+
         } catch (NumberFormatException e) {
             txt_view.appendText("\nERRO: Idade e Peso dos lutadores devem ser números válidos.");
+            logEvent("Track Brawl - Lutadores (Erro)", "Definição", "Numérico Inválido");
         }
     }
 
@@ -130,6 +174,7 @@ public class vikMuniz {
     public void btn_fight(ActionEvent actionEvent) {
         if (fighterOne == null || fighterTwo == null || currentLocal == null) {
             txt_view.appendText("\nERRO: Defina os Lutadores e o Local antes de iniciar a luta!");
+            logEvent("Track Brawl - Luta (Erro)", "Início da Luta", "Faltando dados de lutadores/local");
             return;
         }
 
@@ -137,5 +182,9 @@ public class vikMuniz {
         mainEvent.setTime(new Date());
 
         txt_view.appendText("\n" + mainEvent.getDetails());
+
+
+        String event = String.format("Luta: %s vs %s", fighterOne.apresetention(), fighterTwo.apresetention());
+        logEvent("Track Brawl - Luta", event, currentLocal.getInfo());
     }
 }
