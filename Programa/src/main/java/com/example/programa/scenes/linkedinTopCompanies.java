@@ -74,7 +74,6 @@ public class linkedinTopCompanies {
             );
 
             lbl_companyResult.setText("Sistema de Empresas e Empregados pronto!");
-            logEvent("Inicializacao", company.getName(), String.valueOf(company.getMoney())); // LOG: Inicialização com dados da Cia
 
         } catch (NumberFormatException e) {
             lbl_companyResult.setText("ERRO: Certifique-se de que os campos numéricos têm valores válidos na inicialização.");
@@ -165,4 +164,5 @@ public class linkedinTopCompanies {
             logEvent("Ajuste Salarial (Erro)", employee.getName(), "0.00");
         }
     }
+
 }
