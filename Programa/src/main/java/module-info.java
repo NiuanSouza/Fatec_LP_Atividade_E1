@@ -1,4 +1,4 @@
-module com.example.tgcontrol {
+module com.example.programa {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -14,8 +14,8 @@ module com.example.tgcontrol {
     requires java.desktop;
     requires org.apache.commons.csv;
 
-    opens com.example.tgcontrol to javafx.fxml;
-    opens com.example.tgcontrol.scenes to javafx.fxml;
-    exports com.example.tgcontrol;
+    opens com.example.programa to javafx.fxml;
+    opens com.example.programa.scenes to javafx.fxml;
+    exports com.example.programa;
 
 }

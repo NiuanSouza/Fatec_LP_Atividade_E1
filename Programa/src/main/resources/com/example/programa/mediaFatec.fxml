@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programa.scenes.mediaFatec">
+
+    <children>
+        <AnchorPane prefHeight="514.0" prefWidth="1050.0">
+         <children>
+            <TextField fx:id="txt_p1" layoutX="492.0" layoutY="145.0" prefHeight="26.0" prefWidth="66.0" />
+            <Label layoutX="399.0" layoutY="41.0" prefHeight="76.0" prefWidth="252.0" text="Cálculadora de Média Fatec" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="145.0" prefHeight="26.0" prefWidth="27.0" text="P1:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <TextField fx:id="txt_e1" layoutX="492.0" layoutY="182.0" prefHeight="26.0" prefWidth="66.0" />
+            <TextField fx:id="txt_e2" layoutX="492.0" layoutY="224.0" prefHeight="26.0" prefWidth="66.0" />
+            <TextField fx:id="txt_x" layoutX="492.0" layoutY="263.0" prefHeight="26.0" prefWidth="66.0" />
+            <Label layoutX="445.0" layoutY="182.0" prefHeight="26.0" prefWidth="27.0" text="E1:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <Label layoutX="445.0" layoutY="224.0" prefHeight="26.0" prefWidth="27.0" text="E2:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <Label layoutX="445.0" layoutY="263.0" prefHeight="26.0" prefWidth="27.0" text="X:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <TextField fx:id="txt_sub" layoutX="492.0" layoutY="301.0" prefHeight="26.0" prefWidth="66.0" />
+            <Label layoutX="445.0" layoutY="301.0" prefHeight="26.0" prefWidth="37.0" text="SUB:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <TextField fx:id="txt_api" layoutX="492.0" layoutY="339.0" prefHeight="26.0" prefWidth="66.0" />
+            <Label layoutX="445.0" layoutY="339.0" prefHeight="26.0" prefWidth="37.0" text="API:" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+            <Label fx:id="resposta" layoutX="405.0" layoutY="411.0" prefHeight="18.0" prefWidth="124.0" text="Resposta:" />
+            <Button id="btn_calcular" layoutX="613.0" layoutY="398.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calcularMedia" prefHeight="26.0" prefWidth="111.0" style="-fx-border-radius: 100px; -fx-background-color: #FFFFFF; -fx-border-color: black; -fx-radius: 100px;" text="Calcular" textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Bold" size="13.0" />
+               </font>
+            </Button>
+            <TextArea editable="false" layoutX="37.0" layoutY="177.0" prefHeight="146.0" prefWidth="347.0" text="&#10;SUB;   // Prova Substitutiva   &#10;X;     // Atividade extra   &#10;API;   // Aprendizagem por Projeto Integrado (API)   &#10;P1;    // Prova 1   &#10;E1;    // Entrega E1  &#10;E2;    // Entrega E2" />
+         </children>
+        </AnchorPane>
+    </children>
+
+</Pane>
