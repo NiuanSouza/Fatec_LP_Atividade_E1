@@ -5,6 +5,7 @@ public class Tools {
     private final String name;
     private final String function;
     private double durability;
+    private static final double WEAR_AMOUNT = 5.5;
 
     public Tools(String name, String function, double durability) {
         this.name = name.trim();
@@ -14,7 +15,7 @@ public class Tools {
 
     public String use() {
         if (durability > 0) {
-            decreaseDurability(5.5);
+            decreaseDurability(WEAR_AMOUNT);
             return "Usando a ferramenta: " + name + ". Durabilidade atual: " + String.format("%.1f", durability) + "%.";
         } else {
             return "A ferramenta " + name + " quebrou e não pode mais ser usada.";

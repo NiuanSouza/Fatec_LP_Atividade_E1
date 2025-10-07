@@ -13,7 +13,7 @@ public class Knife {
     }
 
     public String cut() {
-        return "A faca de está cortando com precisão!";
+        return "A faca de " + this.material + " está cortando com precisão!";
     }
 
     public String sharpen() {
@@ -26,17 +26,9 @@ public class Knife {
                 "\n- Método de Forja: " + forgingMethod;
     }
 
-    public String getMaterial() {
-        return material;
-    }
-
-    public String getHandle() {
-        return handle;
-    }
-
-    public String getForgingMethod() {
-        return forgingMethod;
-    }
+    public String getMaterial() { return material; }
+    public String getHandle() { return handle; }
+    public String getForgingMethod() { return forgingMethod; }
 
     @Override
     public String toString() {
