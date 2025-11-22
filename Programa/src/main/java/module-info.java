@@ -13,9 +13,12 @@ module com.example.programa {
     requires java.logging;
     requires java.desktop;
     requires org.apache.commons.csv;
+    requires java.sql;
 
     opens com.example.programa to javafx.fxml;
     opens com.example.programa.Controllers to javafx.fxml;
-    exports com.example.programa;
 
+    opens com.example.programa.Classes.MusicClass to javafx.base;
+
+    exports com.example.programa;
 }
