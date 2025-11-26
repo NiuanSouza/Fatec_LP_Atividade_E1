@@ -63,7 +63,7 @@ public class romeAnthen extends controllerBase {
     protected void inicializarController() {
         MusicDBConnect.createTables();
         setupTableColumns();
-        loadData(); // Carrega os dados na inicialização
+        loadData();
     }
 
     @Override
@@ -126,7 +126,6 @@ public class romeAnthen extends controllerBase {
     @FXML
     public void handleRowSelection(MouseEvent event) {
         if (event.getClickCount() > 0) {
-            // Identifica qual Tab está ativa
             String activeTab = tabPane.getSelectionModel().getSelectedItem().getText();
 
             if ("Valour".equals(activeTab)) {
