@@ -208,7 +208,7 @@ public class MusicDatabaseUtils {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                list.add(mapResultSetToHonour(rs)); // USANDO HELPER
+                list.add(mapResultSetToHonour(rs));
             }
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "DB FALHA (readAllHonour): Falha ao buscar todos os Honour.", e);
@@ -230,7 +230,7 @@ public class MusicDatabaseUtils {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return mapResultSetToHonour(rs); // USANDO HELPER
+                    return mapResultSetToHonour(rs);
                 }
             }
         } catch (SQLException e) {
@@ -325,7 +325,7 @@ public class MusicDatabaseUtils {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                list.add(mapResultSetToPower(rs)); // USANDO HELPER
+                list.add(mapResultSetToPower(rs));
             }
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "DB FALHA (readAllPower): Falha ao buscar todos os Power.", e);
@@ -346,7 +346,7 @@ public class MusicDatabaseUtils {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return mapResultSetToPower(rs); // USANDO HELPER
+                    return mapResultSetToPower(rs);
                 }
             }
         } catch (SQLException e) {

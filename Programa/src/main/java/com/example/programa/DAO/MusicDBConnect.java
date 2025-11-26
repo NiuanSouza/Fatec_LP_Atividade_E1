@@ -12,11 +12,11 @@ public class MusicDBConnect {
     private static final Logger LOGGER = Logger.getLogger(MusicDBConnect.class.getName());
 
     // --- CONFIGURE SEUS DADOS AQUI ---
-    private static final String DATABASE_NAME = "TGControl";
+    private static final String DATABASE_NAME = "RomanAnthen";
     private static final String HOST = "localhost";
-    private static final String PORT = "3306";
+    private static final String PORT = "3307";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "Fatec@2025";
     // --- FIM DA CONFIGURAÇÃO ---
 
 
